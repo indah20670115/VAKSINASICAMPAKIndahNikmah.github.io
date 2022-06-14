@@ -1,0 +1,37 @@
+ol.proj.get("EPSG:4326").setExtent([110.298459, -7.155063, 110.975223, -6.701728]);
+var wms_layers = [];
+var format_demak_0 = new ol.format.GeoJSON();
+var features_demak_0 = format_demak_0.readFeatures(json_demak_0, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:4326'});
+var jsonSource_demak_0 = new ol.source.Vector({
+    attributions: [new ol.Attribution({html: '<a href=""></a>'})],
+});
+jsonSource_demak_0.addFeatures(features_demak_0);var lyr_demak_0 = new ol.layer.Vector({
+                declutter: true,
+                source:jsonSource_demak_0, 
+                style: style_demak_0,
+    title: 'demak<br />\
+    <img src="styles/legend/demak_0_0.png" /> Bonang<br />\
+    <img src="styles/legend/demak_0_1.png" /> Demak<br />\
+    <img src="styles/legend/demak_0_2.png" /> Dempet<br />\
+    <img src="styles/legend/demak_0_3.png" /> Gajah<br />\
+    <img src="styles/legend/demak_0_4.png" /> Guntur<br />\
+    <img src="styles/legend/demak_0_5.png" /> Karang Tengah<br />\
+    <img src="styles/legend/demak_0_6.png" /> Karanganyar<br />\
+    <img src="styles/legend/demak_0_7.png" /> Karangawen<br />\
+    <img src="styles/legend/demak_0_8.png" /> Mijen<br />\
+    <img src="styles/legend/demak_0_9.png" /> Monosalam<br />\
+    <img src="styles/legend/demak_0_10.png" /> Mranggen<br />\
+    <img src="styles/legend/demak_0_11.png" /> Sayung<br />\
+    <img src="styles/legend/demak_0_12.png" /> Wedung<br />\
+    <img src="styles/legend/demak_0_13.png" /> <br />'
+        });
+
+lyr_demak_0.setVisible(true);
+var layersList = [lyr_demak_0];
+lyr_demak_0.set('fieldAliases', {'ID': 'ID', 'ID_Kec': 'ID_Kec', 'Kecamatan': 'Kecamatan', 'xcoord': 'xcoord', 'ycoord': 'ycoord', 'kode_prop': 'kode_prop', 'kode_kab': 'kode_kab', 'campak': 'campak', });
+lyr_demak_0.set('fieldImages', {'ID': 'TextEdit', 'ID_Kec': 'TextEdit', 'Kecamatan': 'TextEdit', 'xcoord': 'TextEdit', 'ycoord': 'TextEdit', 'kode_prop': 'TextEdit', 'kode_kab': 'TextEdit', 'campak': 'TextEdit', });
+lyr_demak_0.set('fieldLabels', {'ID': 'inline label', 'ID_Kec': 'inline label', 'Kecamatan': 'inline label', 'xcoord': 'inline label', 'ycoord': 'inline label', 'kode_prop': 'inline label', 'kode_kab': 'inline label', 'campak': 'inline label', });
+lyr_demak_0.on('precompose', function(evt) {
+    evt.context.globalCompositeOperation = 'normal';
+});
